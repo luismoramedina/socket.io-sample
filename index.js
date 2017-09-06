@@ -16,8 +16,9 @@ io.on('connection', function(socket){
   });
 });
 
-app.get('/hi', function(req, res){
-  res.send('<h1>Hello world</h1>');
+app.get('/event/:id', function(req, res){
+  io.emit('chat message', "this is a message from an event -> " + req.params.id);
+  res.send('Message sent to all clients');
 });
 
 app.get('/', function(req, res){
