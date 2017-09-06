@@ -9,6 +9,12 @@ io.on('connection', function(socket){
   });
 });
 
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+  });
+});
+
 app.get('/hi', function(req, res){
   res.send('<h1>Hello world</h1>');
 });
