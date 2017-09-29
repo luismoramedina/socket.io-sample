@@ -28,3 +28,8 @@ app.get('/', function(req, res){
 http.listen(8080, function(){
   console.log('listening on *:8080');
 });
+
+// Create periodical which ends a message to the client every 5 seconds
+var interval = setInterval(function() {
+  io.emit('chat message', 'This is a message from the server!  ' + new Date().getTime());
+},5000);
