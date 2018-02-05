@@ -7,7 +7,6 @@
     "socket.io": "^2.0.3"
   },
   "scripts" : {
-   "build" : "npm build",
-   "dist" : "zip socket.io-sample.zip *"
-  }
+   "build" : ""
+   }
 }
